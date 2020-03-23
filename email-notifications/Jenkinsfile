@@ -17,6 +17,10 @@ node {
       sh 'exit 1'
     }
   } catch(e) {
+    
+    if (isUnix()) --> sh "command"
+
+     else --> bat "command"
     // mark build as failed
     currentBuild.result = "FAILURE";
     // set variables
